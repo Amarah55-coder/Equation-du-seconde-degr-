@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seconde Degrée</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            width: 100%;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: whitesmoke;
+        }
+        
+        .box {
+            width: 500px;
+            height: auto;
+            border-radius: 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: start;
+            flex-direction: column;
+            padding: 1em;
+            line-height: 2;
+            background-color: transparent;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .solution {
+            padding: 1em;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+        }
+        
+        h2 {
+            display: none;
+            font-size: 1.5rem;
+            letter-spacing: 5px;
+            padding: 0.5em;
+        }
+        
+        .sol {
+            display: none;
+        }
+        
+        .sol.block {
+            display: block;
+        }
+        
+        form {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 2vh;
+            text-align: center;
+        }
+        
+        h1 {
+            font-size: 2rem;
+            font-weight: 600;
+            color: rgb(255, 208, 0);
+        }
+        
+        p {
+            font-size: 1.5rem;
+            font-weight: 550;
+            color: #202020;
+        }
+        
+        .input__item {
+            color: rgb(255, 208, 0);
+            width: 95%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+            flex-direction: row;
+        }
+        
+        .input-content {
+            width: 30%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 5px;
+        }
+        
+        input {
+            padding: 1em;
+            width: 100%;
+            border-radius: 0.8em;
+            background-color: #fff;
+            border: 1px solid rgb(255, 208, 0);
+        }
+        
+        label {
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+        
+        button {
+            margin: 1em auto;
+            width: 80%;
+            padding: 0.8em;
+            border-radius: 0.5em;
+            border: none;
+            color: whitesmoke;
+            font-size: 1.25rem;
+            background-color: rgb(255, 208, 0);
+        }
+        
+        button:hover {
+            color: #202020;
+            background-color: #fdee1d;
+        }
+        
+        @keyframes dots {
+            0% {
+                content: "";
+            }
+            33% {
+                content: ".";
+            }
+            66% {
+                content: "..";
+            }
+            100% {
+                content: "...";
+            }
+        }
+        
+        .loading::after {
+            content: "";
+            animation: dots 1s steps(1, end) infinite;
+        }
+    </style>
+    <script src="../js/seconde.js" defer></script>
+</head>
+
+<body>
+    <div class="box">
+        <form action="" id="form">
+            <h1>Equation du seconde Degrée</h1>
+            <p>ax^2 + bx + c</p>
+            <div class="input__item">
+                <div class="input-content">
+                    <label for="a">a:</label>
+                    <input type="text" id="a" name="a">
+                </div>
+                <div class="input-content">
+                    <label for="b">b:</label>
+                    <input type="text" id="b" name="b">
+                </div>
+                <div class="input-content">
+                    <label for="c">c:</label>
+                    <input type="text" id="c" name="c">
+                </div>
+            </div>
+            <button type="button" id="btn">Résoudre</button>
+        </form>
+        <div class="solution">
+            <h2 class="sol">S = {<span id="x1"></span>; <span id="x2"></span>}</h2>
+        </div>
+    </div>
+</body>
+
+</html>
